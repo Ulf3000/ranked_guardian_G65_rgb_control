@@ -7,21 +7,16 @@ import threading
 VID = 0x3532
 PID = 0xA0C1
 
-# Profile 1 payload for rgb preset "lighting by press"   (figured these out with wireshark and usbpcap )
-profile1_64 = bytearray.fromhex(
-    '04 ae 01 00 00 03 07 04 00 00 00 00 00 00 00 00 '
-    '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 '
-    '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 '
-    '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
-)
+# Profile 1 payload for rgb preset "lighting by press" (preset 3)  speed 4 brightness 2  (figured these out with wireshark and usbpcap )
+profile1_64 = bytearray.fromhex("04ae0100000304020100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000")
 
-# Profile 2 payload for rgb preset "Stars"
-profile2_64 = bytearray.fromhex(
-    '04 ae 01 00 00 04 05 04 01 00 00 00 00 00 00 00 '
-    '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 '
-    '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 '
-    '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
-)
+# Profile 2 payload for rgb preset "Stars" (preset 4) speed 0 brightness 1 
+profile2_64 = bytearray.fromhex("04ae0100000400010100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000")
+
+# Example profile for Custom RGB preset
+# Profile 3 payload for a CUSTOM rgb preset with all keys set to a nice pastel green brightness 1  (figured these out with wireshark and usbpcap )
+# profile3_64 = bytearray.fromhex("04ae010000140501ff9571ff499671ff499771ff499871ff499971ff499a71ff499b71ff499c71ff499d71ff499e71ff499f71ff49a071ff49a171ff49000000")
+
 
 def find_and_open_device():
     filter = hid.HidDeviceFilter(vendor_id=VID, product_id=PID)
