@@ -82,8 +82,8 @@ only the first entry is important !!! double click and scroll down to hid data
 
 rightclick hid data and copy as hexstream and use in your script :)
 
-## this also enables you to use as many custom rgb profiles as you want, while originally the keyboard software only supports one custom rgb profile!!!
-
+# this also enables you to use as many custom rgb profiles as you want, while originally the keyboard software only supports one custom rgb profile!!!
+just create a custom profile send it to the keyboard and capture it with usbpcapCMD.exe
 
 
 License
